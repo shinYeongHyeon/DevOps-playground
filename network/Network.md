@@ -109,4 +109,27 @@ Amazon VPC 를 이용하면 사용자가 정의한 **가상 네트워크**로 AW
 | ::/0        | igw-id | 
 
 6. Network Address Translation (NAT) instance / NAT Gateway
+   - Private 내에서 외부로 가기 위한 방법
+   - 왜 필요한가 ?
+     - VPC Private 는 외부와 통신이 안되기 때문에, 중요한 데이터를 보관을 하는데 주로 사용 함 (e.g. Database)
+     - 그런데, 저 데이터들을 어떻게 활용해야하지 ? 외부 인터넷 연결이 필요한데..?
+     - 우회의 방법을 쓴다 .. !
+       - Private Subnet 에서 Public Subnet 으로 ..!
+     - 이 우회의 방법을 NAT instance 와 NAT Gateway 로 한다 (Public Subnet 내)
+       - 실제로는 Private -> Private NACL -> Private Route table -> Public Route Table -> Public NACL -> Public Subnet/NAT instance -> 다시 Public NACL -> ... -> Route
+     - NAT gateway vs NAT instance
+       - NAT instance 는 단일 Instance (EC2)
+       - NAT gateway 는 AWS 에서 제공하는 특화된 서비스
+         - : 당연하게 Public Subnet 에 있어야함
+     - Bastion Host
+       - 이거는 반대 개념
+         - 외부에서 Private 으로 가기 위한 방법
+       - VPC 밖의 관리자가 Private subnet 의 인스턴스들을 조작/접근하고 싶다
+       - Bastion Host 도 Public Subnet 안에 있다
+       - 외부에서는 Bastion Host 로 접근하고, Bastion Host 는 Private Subnet 으로 접근 !
 7. VPC endpoint
+   - VPC 엔드포인트를 통해 IGW, NAT 디바이스, VPN 연결, AWS Direct Connect 연결을 필요로 하지 않고 AWS Private Link 구동 지원 AWS 서비스 및 VPC 엔드포인트 **서비스에 비공개**로 연결할 수 있습니다.
+   - VPC 의 인스턴스는 서비스의 리소스와 통신하는데 **퍼블릭 IP 주소를 필요로 하지 않습니다**. VPC 와 기타 서비스 간의 트래픽은 Amazon 네트워크를 벗어나지 않습니다.
+   - 즉, AWS의 여러 서비스들과 VPC를 연결 시켜주는 중간 매개체
+   - Interface Endpoint : Private ip를 만들어 서비스로 연결해줌 (SQS, SNS, Kinesis ...)
+   - Gateway Endpoint : 라우팅 테이블에서 경로의 대상을 지정하여 사용 (S3, Dynamodb ...)
