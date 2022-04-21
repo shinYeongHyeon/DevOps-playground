@@ -92,6 +92,9 @@ Amazon VPC 를 이용하면 사용자가 정의한 **가상 네트워크**로 AW
 4. Network Access Control List (NACL) / Security Group (SG)
    - 보안 검문소
    - NACL -> Stateless, SG -> Stateful
+     - Stateful 하다 ? (약간, 상태를 저장하고 있다라는 느낌)
+       - 만약 내가 inbound 80 은 허용하고, 딱히 outbound 를 설정안했다 하더라도 80포트로 들어오는 요청의 포트가 1025더라도 우리가 응답을 줄 수 있음
+       - 반대로 Stateless 일 경우에는 응답을 받을 수 없다. stateless 가 좀더 엄격한 느낌
    - Access Block 은 NACL 에서만 가능
      - 특정 IP 대역의 Inbound 를 막고 싶으면 NACL 을 통해서만 ..!
 5. Route Table
