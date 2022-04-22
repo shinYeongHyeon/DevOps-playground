@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  postgres:
+    container_name: small-architecture-postgres
+    image: postgres
+    volumes:
+      - ./docker/data/postgres-data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=sap
+      - POSTGRES_USER=saprootuser
+      - POSTGRES_PASSWORD=sappassword
+      - POSTGRES_INITDB_ARGS=--encoding=UTF-8
+    ports:
+      - "5432:5432"

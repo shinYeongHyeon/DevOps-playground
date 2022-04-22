@@ -1,1 +1,20 @@
 .idea
+.DS_Store
+
+smallArchitecture/api/docker
+
+# compiled output
+smallArchitecture/api/dist
+smallArchitecture/api/node_modules
+
+# Logs
+smallArchitecture/api/logs
+smallArchitecture/api/*.log
+smallArchitecture/api/npm-debug.log*
+smallArchitecture/api/yarn-debug.log*
+smallArchitecture/api/yarn-error.log*
+smallArchitecture/api/lerna-debug.log*
+
+# Tests
+smallArchitecture/api/coverage
+smallArchitecture/api/.nyc_output
