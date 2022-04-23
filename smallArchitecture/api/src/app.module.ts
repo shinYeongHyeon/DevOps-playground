@@ -1,5 +1,8 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { ShopEntity } from "./Shop/entities/Shop.entity";
+import {ShopModule} from "./Shop/Shop.module";
+import {MenuEntity} from "./Shop/entities/Menu.entity";
 
 @Module({
   imports: [
@@ -10,8 +13,13 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       username: 'saprootuser',
       password: 'sappassword',
       database: 'sap',
-      entities: [],
+      entities: [
+          ShopEntity,
+          MenuEntity,
+      ],
+      synchronize: true
     }),
+      ShopModule,
   ],
   controllers: [],
   providers: [],
