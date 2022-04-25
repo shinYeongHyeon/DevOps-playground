@@ -1,10 +1,11 @@
 import {
     Column,
-    Entity, ManyToOne,
+    Entity, ManyToOne, OneToMany,
     PrimaryGeneratedColumn
 } from 'typeorm';
 
 import { ShopEntity } from '../../Shop/entities/Shop.entity';
+import { OrderFoodEntity } from './OrderFood.entity';
 
 @Entity('order')
 export class OrderEntity {
@@ -36,4 +37,7 @@ export class OrderEntity {
         default: false,
     })
     deliver_finish: boolean;
+
+    @OneToMany(type => OrderFoodEntity, orderFood => orderFood.order)
+    order_foods: OrderFoodEntity;
 }

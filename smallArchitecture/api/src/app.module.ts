@@ -3,6 +3,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 
 import { OrderModule } from './Order/Order.module';
 import { OrderEntity } from './Order/entities/Order.entity';
+import { OrderFoodEntity } from './Order/entities/OrderFood.entity';
 import { ShopModule } from './Shop/Shop.module';
 import { MenuEntity } from './Shop/entities/Menu.entity';
 import { ShopEntity } from './Shop/entities/Shop.entity';
@@ -20,6 +21,7 @@ import { ShopEntity } from './Shop/entities/Shop.entity';
           ShopEntity,
           MenuEntity,
           OrderEntity,
+          OrderFoodEntity,
       ],
       synchronize: true
     }),
