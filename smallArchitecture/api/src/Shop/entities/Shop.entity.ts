@@ -1,4 +1,5 @@
 import {Column, Entity, OneToMany, PrimaryGeneratedColumn} from "typeorm";
+import { OrderEntity } from '../../Order/entities/Order.entity';
 import {MenuEntity} from "./Menu.entity";
 
 @Entity('shop')
@@ -20,4 +21,7 @@ export class ShopEntity {
 
     @OneToMany(type => MenuEntity, menu => menu.shop)
     menus: MenuEntity;
+
+    @OneToMany(type => OrderEntity, order => order.shop)
+    orders: OrderEntity;
 }

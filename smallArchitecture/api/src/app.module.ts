@@ -1,8 +1,11 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { ShopEntity } from "./Shop/entities/Shop.entity";
-import {ShopModule} from "./Shop/Shop.module";
-import {MenuEntity} from "./Shop/entities/Menu.entity";
+
+import { OrderModule } from './Order/Order.module';
+import { OrderEntity } from './Order/entities/Order.entity';
+import { ShopModule } from './Shop/Shop.module';
+import { MenuEntity } from './Shop/entities/Menu.entity';
+import { ShopEntity } from './Shop/entities/Shop.entity';
 
 @Module({
   imports: [
@@ -16,10 +19,12 @@ import {MenuEntity} from "./Shop/entities/Menu.entity";
       entities: [
           ShopEntity,
           MenuEntity,
+          OrderEntity,
       ],
       synchronize: true
     }),
       ShopModule,
+      OrderModule,
   ],
   controllers: [],
   providers: [],

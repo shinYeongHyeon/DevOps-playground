@@ -1,5 +1,11 @@
-import {Column, Entity, ManyToOne, PrimaryGeneratedColumn} from "typeorm";
-import {ShopEntity} from "./Shop.entity";
+import {
+    Column,
+    Entity,
+    ManyToOne,
+    PrimaryGeneratedColumn,
+} from 'typeorm';
+
+import { ShopEntity } from './Shop.entity';
 
 @Entity('menu')
 export class MenuEntity {
