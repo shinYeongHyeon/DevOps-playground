@@ -1,2 +1,7 @@
-### Find Shop
+### Find Shops
 GET localhost:3000/shops
+
+### Find Shop
+GET localhost:3000/shops/1
+
+

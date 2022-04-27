@@ -16,7 +16,14 @@ export class ShopController {
     ) {}
 
     @Get('')
-    async findAll(@Param('id') id: string): Promise<ShopEntity[]> {
+    async findAll(): Promise<ShopEntity[]> {
         return await this.shopRepository.find();
+    }
+
+    @Get(':id')
+    async find(@Param('id') id: number): Promise<ShopEntity> {
+        return await this.shopRepository.findOneBy({
+            id,
+        });
     }
 }
