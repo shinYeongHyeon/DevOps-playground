@@ -1,9 +1,9 @@
-import { Module } from "@nestjs/common";
-import {TypeOrmModule} from "@nestjs/typeorm";
+import { Module } from '@nestjs/common';
+import { TypeOrmModule } from '@nestjs/typeorm';
+
 import { ShopController } from './controller/Shop.controller';
-import { ShopRepository } from './entities/provider/Shop.repository';
-import { ShopEntity } from "./entities/Shop.entity";
-import { MenuEntity } from "./entities/Menu.entity";
+import { ShopEntity } from './entities/Shop.entity';
+import { MenuEntity } from './entities/Menu.entity';
 
 @Module({
     imports: [
@@ -16,8 +16,6 @@ import { MenuEntity } from "./entities/Menu.entity";
         ShopController,
     ],
     exports: [],
-    providers: [
-        ShopRepository
-    ]
+    providers: []
 })
 export class ShopModule {}

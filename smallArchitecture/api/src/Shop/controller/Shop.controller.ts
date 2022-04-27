@@ -3,17 +3,16 @@ import { Repository } from 'typeorm';
 import {
     Controller,
     Get,
-    Inject,
     Param,
 } from '@nestjs/common';
-import { ShopRepository } from '../entities/provider/Shop.repository';
 
 import { ShopEntity } from '../entities/Shop.entity';
 
 @Controller('shops')
 export class ShopController {
     constructor(
-        @InjectRepository(ShopRepository) private shopRepository: ShopRepository
+        @InjectRepository(ShopEntity)
+        private readonly shopRepository: Repository<ShopEntity>
     ) {}
 
     @Get('')
