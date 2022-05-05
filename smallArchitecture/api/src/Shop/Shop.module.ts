@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
+import { MenuController } from './controller/Menu.controller';
 import { ShopController } from './controller/Shop.controller';
 import { ShopEntity } from './entities/Shop.entity';
 import { MenuEntity } from './entities/Menu.entity';
@@ -13,6 +14,7 @@ import { MenuEntity } from './entities/Menu.entity';
         ]),
     ],
     controllers: [
+        MenuController,
         ShopController,
     ],
     exports: [],

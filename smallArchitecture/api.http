@@ -10,6 +10,12 @@ Content-Type: application/json
 
 { "name": "가게2", "address": "사평대로 353" }
 
+### Find Menus without shop
+GET localhost:3000/menus
+
+### Find Menu without shop
+GET localhost:3000/menus/2
+
 ### Find Menus
 GET localhost:3000/shops/1/menus
 
