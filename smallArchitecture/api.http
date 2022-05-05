@@ -8,4 +8,16 @@ GET localhost:3000/shops/1
 POST localhost:3000/shops
 Content-Type: application/json
 
-{ "name": "test", "address": "test_address" }
+{ "name": "가게2", "address": "사평대로 353" }
+
+### Find Menus
+GET localhost:3000/shops/1/menus
+
+### Find Menu
+GET localhost:3000/shops/1/menus/2
+
+### Save Menu
+POST localhost:3000/shops/1/menus
+Content-Type: application/json
+
+{ "foodName": "떡볶이" }
