@@ -4,4 +4,8 @@ GET localhost:3000/shops
 ### Find Shop
 GET localhost:3000/shops/1
 
+### Save Shop
+POST localhost:3000/shops
+Content-Type: application/json
 
+{ "name": "test", "address": "test_address" }

@@ -1,9 +1,10 @@
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import {
+    Body,
     Controller,
     Get,
-    Param,
+    Param, Post,
 } from '@nestjs/common';
 
 import { ShopEntity } from '../entities/Shop.entity';
@@ -26,4 +27,16 @@ export class ShopController {
             id,
         });
     }
+
+    @Post()
+    async save(@Body() saveShopDto: SaveShopDto): Promise<void> {
+        await this.shopRepository.save({
+            ...saveShopDto
+        })
+    }
+}
+
+interface SaveShopDto {
+    name: string;
+    address: string;
 }
