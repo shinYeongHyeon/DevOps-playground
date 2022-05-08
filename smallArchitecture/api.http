@@ -27,3 +27,12 @@ POST localhost:3000/shops/1/menus
 Content-Type: application/json
 
 { "foodName": "떡볶이" }
+
+### Order
+POST localhost:3000/orders
+Content-Type: application/json
+
+{
+  "address": "시민로 209",
+  "shopId": 1
+}
