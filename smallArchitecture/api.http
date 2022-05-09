@@ -26,7 +26,13 @@ GET localhost:3000/shops/1/menus/2
 POST localhost:3000/shops/1/menus
 Content-Type: application/json
 
-{ "foodName": "떡볶이" }
+{ "foodName": "가래떡떡볶이" }
+
+### Get Orders
+GET localhost:3000/orders
+
+### Get Order
+GET localhost:3000/orders/1
 
 ### Order
 POST localhost:3000/orders
@@ -34,5 +40,6 @@ Content-Type: application/json
 
 {
   "address": "시민로 209",
-  "shopId": 1
+  "shopId": 1,
+  "foodIds": [2, 4]
 }
