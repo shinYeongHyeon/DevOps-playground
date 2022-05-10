@@ -44,10 +44,14 @@ Content-Type: application/json
   "foodIds": [2, 4]
 }
 
+### Get Boss Orders
+GET localhost:3000/boss/shops/1/orders
+
+
 ### Update Estimated time
-PUT localhost:3000/boss/order/3
+PUT localhost:3000/boss/shops/1/orders/3
 Content-Type: application/json
 
 {
-  "time": 2
+  "time": 5
 }
