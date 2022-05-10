@@ -43,3 +43,11 @@ Content-Type: application/json
   "shopId": 1,
   "foodIds": [2, 4]
 }
+
+### Update Estimated time
+PUT localhost:3000/boss/order/3
+Content-Type: application/json
+
+{
+  "time": 2
+}
