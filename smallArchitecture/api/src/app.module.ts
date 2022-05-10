@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { BossModule } from './Boss/Boss.module';
+import { DeliveryModule } from './Delivery/Delivery.module';
 
 import { OrderModule } from './Order/Order.module';
 import { OrderEntity } from './Order/entities/Order.entity';
@@ -29,6 +30,7 @@ import { ShopEntity } from './Shop/entities/Shop.entity';
       ShopModule,
       OrderModule,
       BossModule,
+      DeliveryModule,
   ],
   controllers: [],
   providers: [],

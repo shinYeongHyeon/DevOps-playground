@@ -1,6 +1,7 @@
 import {
     Body,
-    Controller, Get,
+    Controller,
+    Get,
     Param,
     Put,
 } from '@nestjs/common';
@@ -8,7 +9,6 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 
 import { OrderEntity } from '../../Order/entities/Order.entity';
-import { ShopEntity } from '../../Shop/entities/Shop.entity';
 
 @Controller('boss')
 export class BossController {

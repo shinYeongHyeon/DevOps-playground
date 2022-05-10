@@ -16,7 +16,7 @@ import { OrderFoodEntity } from './entities/OrderFood.entity';
             MenuEntity,
         ])
     ],
-    controllers: [OrderController],
+    controllers: [ OrderController ],
     exports: [],
     providers: []
 })

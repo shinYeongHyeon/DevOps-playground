@@ -47,7 +47,6 @@ Content-Type: application/json
 ### Get Boss Orders
 GET localhost:3000/boss/shops/1/orders
 
-
 ### Update Estimated time
 PUT localhost:3000/boss/shops/1/orders/3
 Content-Type: application/json
@@ -55,3 +54,9 @@ Content-Type: application/json
 {
   "time": 5
 }
+
+### Get Not Delivered Orders
+GET localhost:3000/delivery/not-delivered-orders
+
+### Update Estimated time
+PUT localhost:3000/delivery/orders/3/delivery-finish
