@@ -10,14 +10,15 @@ import { ShopModule } from './Shop/Shop.module';
 import { MenuEntity } from './Shop/entities/Menu.entity';
 import { ShopEntity } from './Shop/entities/Shop.entity';
 
+// TODO: DB 정보 삭제 (인프라 집중이기 때문에, 굳이 config 까지는...)
 @Module({
   imports: [
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: 'localhost',
+      host: '',
       port: 5432,
-      username: 'saprootuser',
-      password: 'sappassword',
+      username: '',
+      password: '',
       database: 'sap',
       entities: [
           ShopEntity,
