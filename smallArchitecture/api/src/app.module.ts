@@ -10,6 +10,7 @@ import { OrderFoodEntity } from './Order/entities/OrderFood.entity';
 import { MenuEntity } from './Shop/entities/Menu.entity';
 import { ShopEntity } from './Shop/entities/Shop.entity';
 
+// NOTE: 접근 허용 목록 : 집/인스턴스
 @Module({
   imports: [
     TypeOrmModule.forRoot({
